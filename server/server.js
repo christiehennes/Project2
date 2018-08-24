@@ -34,6 +34,7 @@ app.set("view engine", "handlebars");
 // Routes
 require("../routes/apiRoutes")(app);
 require("../routes/htmlRoutes")(app);
+require("../routes/post-api-routes")(app);
 
 var syncOptions = { force: true }; //TODO change this to false later
 
