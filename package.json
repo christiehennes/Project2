@@ -4,11 +4,11 @@
   "description": "Rentee Project",
   "main": "server/server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server/server.js",
     "lint": "eslint **/*.js --quiet",
     "fix": "eslint --fix .",
     "test": "npm run lint && NODE_ENV=test mocha -u tdd --reporter spec --exit",
-    "dev": "nodemon server --watch server"
+    "dev": "nodemon server/server.js --watch server"
   },
   "license": "ISC",
   "dependencies": {
