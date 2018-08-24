@@ -4,6 +4,7 @@ var bodyParser = require("body-parser");
 const path = require('path');
 const cookieParser = require('cookie-parser');
 var exphbs = require("express-handlebars");
+const customAuthMiddleware = require('./middleware/custom-auth-middleware');
 
 var db = require("./models/index");
 
@@ -17,6 +18,8 @@ var PORT = process.env.PORT || 3000;
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(customAuthMiddleware);
 app.use(express.static(`${clientDir}/public`));
 
 // Handlebars
