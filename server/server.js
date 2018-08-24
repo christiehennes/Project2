@@ -29,9 +29,14 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
-require("../routes/apiRoutes")(app);
-require("../routes/htmlRoutes")(app);
 require("../routes/post-api-routes")(app);
+require("../routes/htmlRoutes")(app);
+
+// Render 404 page for any unmatched routes
+app.get("*", function(req, res) {
+  res.render("404");
+});
+
 
 var syncOptions = { force: true }; //TODO change this to false later
 
