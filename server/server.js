@@ -5,7 +5,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 var exphbs = require("express-handlebars");
 
-var db = require("../models");
+var db = require("./models");
 
 // directory references
 const clientDir = path.join(__dirname, '../client');
