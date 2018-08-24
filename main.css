@@ -22,16 +22,18 @@ html, body, section {
 
   .rent {
     color: yellow;
-    vertical-align: right;
+    text-align: right;
+
   }
 
   .list {
       color: black;
-      vertical-align: left;
+      text-align: left;
   }
   
   .left-container {
     background-color: black;
+    color: yellow;
     flex: 1;
     padding: 1rem;
   }
@@ -40,4 +42,13 @@ html, body, section {
     background-color: yellow;
     flex: 1;
     padding: 1rem;
+  }
+
+  p {
+      text-align: center;
+  }
+
+  button {
+      max-width: 50px;
+      margin: 0 auto;
   }

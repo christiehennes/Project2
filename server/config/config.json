@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
-    "database": "exampledb",
+    "password": "Freshstart100!",
+    "database": "rentee_db",
     "host": "localhost",
     "dialect": "mysql"
   },
