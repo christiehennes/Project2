@@ -1,5 +1,5 @@
 
-var db = require("../models");
+var db = require("../server/models");
 
 
 module.exports = function(app) {
@@ -45,7 +45,7 @@ module.exports = function(app) {
   });
 
   // PUT route for updating posts
-  /*app.put("/api/products", function(req, res) {
+  /*app.put("/api/products/", function(req, res) {
     db.Product.update(
       req.body,
       {
