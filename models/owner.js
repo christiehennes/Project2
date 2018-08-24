@@ -30,11 +30,11 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    // Owner.associate = function(models) {
-    //     Owner.hasMany(models.Product, {
-    //       onDelete: "cascade"
-    //     });
-    // };
+    Owner.associate = function(models) {
+        Owner.hasMany(models.Product, {
+          onDelete: "cascade"
+        });
+    };
 
     return Owner;
 };
