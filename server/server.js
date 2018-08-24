@@ -5,7 +5,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 var exphbs = require("express-handlebars");
 
-var db = require("./models");
+var db = require("./models/index");
 
 // directory references
 const clientDir = path.join(__dirname, '../client');
@@ -32,7 +32,7 @@ app.set("view engine", "handlebars");
 require("../routes/apiRoutes")(app);
 require("../routes/htmlRoutes")(app);
 
-var syncOptions = { force: false };
+var syncOptions = { force: true }; //TODO change this to false later
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`

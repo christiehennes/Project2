@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "exampledb",
+    "database": "rentee_db",
     "host": "localhost",
     "dialect": "mysql"
   },
