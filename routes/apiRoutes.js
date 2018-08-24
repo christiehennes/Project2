@@ -21,4 +21,16 @@ module.exports = function(app) {
       res.json(dbExample);
     });
   });
+
+  
+  //GET all products 
+
+  //GET products by specific category 
+
+  //POST Create a product 
+
+  //
+
+
+
 };
