@@ -4,53 +4,25 @@ var path = require("path");
 
 module.exports = function(app) {
   
-  // Load index page
+  // Load home page
   app.get("/", function(req, res) {
-    // db.Product.findAll({}).then(function() {
-    //   res.render("index", {
-    //     msg: "Welcome!"
-    //   });
-    // });
-
     res.sendFile(path.join(__dirname, "../client/public/html/index.html"));
   });
     
-  // Load listing page with all products available
-  app.get("/list", function(req, res) {
-    // db.Product.findAll({}).then(function(dbProducts) {
-    //   res.render("list", {
-    //     msg: "Welcome!",
-    //     products: dbProducts
-    //   });
-    // });
-
+  // Load listing page with all products available. Users will be able to search on this page
+  // Results will be populated on this page via the API routes
+  app.get("/listProducts", function(req, res) {
     res.sendFile(path.join(__dirname, "../client/public/html/list.html"));
   });
 
-  // List items per category
-  app.get("/list/:category", function(req, res) {
-    // db.Product.findAll({where: { category: [Op.like] `%${req.params.category}%`} }).then(function(dbProducts) {
-    //   res.render("list", {
-    //     msg: "Welcome!",
-    //     products: dbProducts
-    //   });
-    // });
-
+  // Load the form to submit a new product 
+  app.get("/postProduct", function(req, res) {
+    res.sendFile(path.join(__dirname, "../client/public/html/postProduct.html"));
   });
 
-  // List specific items by product id 
-  app.get("/list/:id", function(req, res) {
-    // db.Product.findAll({where: { name: [Op.like] `%${req.params.name}%`} }).then(function(dbProducts) {
-    //   res.render("list", {
-    //     msg: "Welcome!",
-    //     products: dbProducts
-    //   });
-    // });
+  // Load the form to checkout after you selected an item to buy 
+  app.get("/checkout", function(req, res) {
+    res.sendFile(path.join(__dirname, "../client/public/html/checkout.html"));
   });
-
  
-  app.get("/checkout", function(req, res){
-    res.sendFile(path.join(__dirname, "../client/public/html/checkout.html"))
-  })
-
 };
