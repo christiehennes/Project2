@@ -1,0 +1,54 @@
+/* Pen-specific styles */
+html, body, section {
+    height: 100%;
+  }
+  
+  body {
+    font-family: sans-serif;
+    font-size: 1.25rem;
+    line-height: 150%;
+    text-shadow: 0 2px 2px #b6701e;
+  }
+  
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  /* Pattern styles */
+  .container {
+    display: flex;
+  }
+
+  .rent {
+    color: yellow;
+    text-align: right;
+
+  }
+
+  .list {
+      color: black;
+      text-align: left;
+  }
+  
+  .left-container {
+    background-color: black;
+    color: yellow;
+    flex: 1;
+    padding: 1rem;
+  }
+  
+  .right-container {
+    background-color: yellow;
+    flex: 1;
+    padding: 1rem;
+  }
+
+  p {
+      text-align: center;
+  }
+
+  button {
+      max-width: 50px;
+      margin: 0 auto;
+  }
