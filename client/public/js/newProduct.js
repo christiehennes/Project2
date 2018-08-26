@@ -1,6 +1,14 @@
+
+
 $(document).ready(function() {
 
-    //Get all the fields from the different forms on the page
+
+
+    // Click handler for submit button
+    $(document).on('click', '#submit-button', function(){
+        console.log("button was clicked");
+
+        //Get all the fields from the different forms on the page
     let name = $('#product-name').val().trim();
     let category = $('#product-category').val();
     let description = $('#product-description').val();
@@ -18,6 +26,9 @@ $(document).ready(function() {
     //TODO perform validation to make sure they are all valid
 
     //Perform post to DB
+
+    })
+
 
 
 
