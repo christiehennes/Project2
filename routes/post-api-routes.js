@@ -1,10 +1,12 @@
 
-var db = require("../server/models");
+var db = require("../server/models"); 
+var Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 
 
 module.exports = function(app) {
 
-  // GET route for getting all of the posts
+  // Display all products
   app.get("/api/products", function(req, res) {
     var query = {};
    
@@ -15,18 +17,19 @@ module.exports = function(app) {
     });
   });
 
+  // Display certain category or exact product
   app.get("/api/products/:category", function(req, res) {
     
     db.Product.findAll({
       where: {
-        category: req.params.category
+        [Op.or]: [{category: req.params.category}, {name: req.params.category}]
       },
     }).then(function(dbProduct) {
       res.json(dbProduct);
     });
   });
 
-  // POST route for saving a new post
+  // POST route for saving a new product
   app.post("/api/addProduct", function(req, res) {
     db.Product.create(req.body).then(function(dbProduct) {
       res.json(dbProduct);
@@ -34,7 +37,7 @@ module.exports = function(app) {
   });
 
   // DELETE route for deleting posts
-  app.delete("/api/products/:name", function(req, res) {
+  app.delete("/api/deleteProducts/:name", function(req, res) {
     db.Product.destroy({
       where: {
         name: req.params.name
@@ -45,7 +48,7 @@ module.exports = function(app) {
   });
 
   // PUT route for updating posts
-  /*app.put("/api/products/", function(req, res) {
+ /*app.put("/api/products/:name", function(req, res) {
     db.Product.update(
       req.body,
       {
