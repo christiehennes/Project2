@@ -23,17 +23,21 @@ app.use(customAuthMiddleware);
 app.use(express.static(`${clientDir}/public`));
 
 // Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
-app.set("view engine", "handlebars");
+// app.engine(
+//   "handlebars",
+//   exphbs({
+//     defaultLayout: "main"
+//   })
+// );
+// app.set("view engine", "handlebars");
+
+
+app.use(express.static("public"));
+
 
 // Routes
 require("../routes/post-api-routes")(app);
-require("../routes/htmlRoutes")(app);
+// require("../routes/htmlRoutes")(app);
 
 // Render 404 page for any unmatched routes
 app.get("*", function(req, res) {
