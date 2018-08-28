@@ -31,6 +31,7 @@ router.post('/register', async (req, res) => {
     return res.json(data);
 
   } catch(err) {
+    console.log("here");
     return res.status(400).send(err);
   }
 
