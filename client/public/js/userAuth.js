@@ -54,9 +54,22 @@ $(document).ready(function() {
         }); 
       }
 
+      function logout(e) {
+        e.preventDefault();
+        $.ajax('/logout', {
+          method: 'DELETE',
+          data: {}
+        }).then(user => {
+          $.removeCookie('auth_token');
+          window.location.reload()
+        })
+      }
+
 
 
 
       $(document).on('click', '#register-button', register);
       $(document).on('click', '#login-button', login);
+      $(document).on('click', '#logout', logout);
+
 });
