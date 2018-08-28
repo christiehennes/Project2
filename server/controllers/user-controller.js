@@ -93,6 +93,7 @@ router.delete('/logout', async (req, res) => {
 /* Me Route - get the currently logged in user
 ========================================================= */
 router.get('/me', (req, res) => {
+
   if (req.user) {
     return res.send(req.user);
   }

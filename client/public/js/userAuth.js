@@ -24,7 +24,7 @@ $(document).ready(function() {
           if (user && authToken.token) {
               console.log("new user created!!");
             $.cookie('auth_token', authToken.token, { expires: 7 });
-            window.location = '/'
+            window.location = '/postProduct'
           } else {
             throw new Error('something went wrong')
           }
