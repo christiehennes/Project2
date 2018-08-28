@@ -4,15 +4,20 @@ $(document).ready(function() {
 
     $.get('/me', function(user, err){
 
-        if(err) alert(err);
-
         if(user){
+            $('#user-logged-in').append(
+                `<div>Welcome ${user.username}! <button id="logout">Logout</button></div>
+                `
+            );
             console.log("A user is currently logged in: ");
             console.log(user.username);
         }
         else{
             console.log("no user");
+            return;
         }
+
+        if(err) alert(err);
     });
     
 
@@ -42,10 +47,5 @@ $(document).ready(function() {
     //Perform post to DB
 
     })
-
-
-
-
-
 
 });
