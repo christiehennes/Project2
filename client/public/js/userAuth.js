@@ -2,6 +2,27 @@ $(document).ready(function() {
 
 
     //Function to login
+    function login(e) {
+        e.preventDefault();
+        // if (!validInput(['username', 'password'])) return;
+
+        console.log("U: " + $('[name="owner-username"]').val())
+        console.log("P: " + $('[name="owner-password"]').val())
+
+        $.ajax('/login', {
+          method: 'POST',
+          data: {
+            username: $('[name="owner-username"]').val(),
+            password: $('[name="owner-password"]').val()
+          }
+        }).then(({ user, authToken }) => {
+          $.cookie('auth_token', authToken.token, { expires: 7 });
+          if (!user) throw new Error('invalid username or password');
+          window.location = '/postProduct'
+        }).fail(function(err){
+            alert(err.responseText);
+        }); 
+      }
 
     //Function to create a new user
 
@@ -37,4 +58,5 @@ $(document).ready(function() {
 
 
       $(document).on('click', '#register-button', register);
+      $(document).on('click', '#login-button', login);
 });

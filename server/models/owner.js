@@ -58,7 +58,9 @@ module.exports = function(sequelize, DataTypes) {
   // e.g. User.authenticate('user1', 'password1234')
   Owner.authenticate = async function(username, password) {
 
-    const user = await User.findOne({ where: { username } });
+    const user = await Owner.findOne({ where: { username }});
+
+    console.log("USER: "+ JSON.stringify(user));
 
     // bcrypt is a one-way hashing algorithm that allows us to 
     // store strings on the database rather than the raw
@@ -74,8 +76,11 @@ module.exports = function(sequelize, DataTypes) {
     // the User model prototype. This can be found in the
     // sequelize documentation
     Owner.prototype.authorize = async function () {
+        console.log("inside authorize");
+
+        
         const { AuthToken } = sequelize.models;
-        const user = this
+        const user = this;
 
         // create a new auth token associated to 'this' user
         // by calling the AuthToken class method we created earlier
