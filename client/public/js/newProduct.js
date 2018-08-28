@@ -2,6 +2,20 @@
 
 $(document).ready(function() {
 
+    $.get('/me', function(user, err){
+
+        if(err) alert(err);
+
+        if(user){
+            console.log("A user is currently logged in: ");
+            console.log(user.username);
+        }
+        else{
+            console.log("no user");
+        }
+    });
+    
+
 
 
     // Click handler for submit button
