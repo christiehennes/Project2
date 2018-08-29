@@ -48,7 +48,29 @@ html, body, section {
       text-align: center;
   }
 
-  button {
+  buttonRent {
       max-width: 50px;
       margin: 0 auto;
+  }
+
+  buttonList {
+    max-width: 50px;
+    margin: 0 auto;
+}
+
+/* rent.html */ 
+
+  #searchBar {
+  align-content: center;
+  justify-content: center;
+  height: 300px;
+}
+
+  #searchButton {
+    color: black;
+    border-color: black;
+  }
+
+  #searchForm {
+    width: 500px;
   }
