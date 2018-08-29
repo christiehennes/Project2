@@ -24,7 +24,7 @@ module.exports = function(app) {
     
     db.Product.findAll({
       where: {
-        [Op.or]: [{category: req.params.category}, {name: req.params.category}]
+        [Op.or]: [{category: req.params.category}, {name: req.params.category}, {id:req.params.category}]
       },
     }).then(function(dbProduct) {
       res.json(dbProduct);
