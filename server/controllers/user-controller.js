@@ -31,6 +31,7 @@ router.post('/register', async (req, res) => {
     return res.json(data);
 
   } catch(err) {
+    console.log("here");
     return res.status(400).send(err);
   }
 
@@ -50,9 +51,10 @@ router.post('/login', async (req, res) => {
   }
 
   try {
-    let user = await Owner.authenticate(username, password)
+    let user = await Owner.authenticate(username, password);
 
-    user = await user.authorize();
+    // user = await user.authorize(); Looks like it was calling this line twice, once in the above function and once here
+    // took it out and then it worked
 
     return res.json(user);
 
@@ -92,6 +94,7 @@ router.delete('/logout', async (req, res) => {
 /* Me Route - get the currently logged in user
 ========================================================= */
 router.get('/me', (req, res) => {
+
   if (req.user) {
     return res.send(req.user);
   }

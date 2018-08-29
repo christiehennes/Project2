@@ -1,29 +1,34 @@
-var db = require("../server/models");
+var path = require("path");
 
 module.exports = function(app) {
-  // Load index page
+  
+  // Load home page
   app.get("/", function(req, res) {
-
-    res.send("Hello!");
-    // db.Example.findAll({}).then(function(dbExamples) {
-    //   res.render("index", {
-    //     msg: "Welcome!",
-    //     examples: dbExamples
-    //   });
-    // });
+    res.sendFile(path.join(__dirname, "../client/public/html/index.html"));
   });
 
-  // // Load example page and pass in an example by id
-  // app.get("/example/:id", function(req, res) {
-  //   db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-  //     res.render("example", {
-  //       example: dbExample
-  //     });
-  //   });
-  // });
+  app.get("/login", function(req, res) {
+    res.sendFile(path.join(__dirname, "../client/public/html/login.html"));
+  });
 
-  // // Render 404 page for any unmatched routes
-  // app.get("*", function(req, res) {
-  //   res.render("404");
-  // });
+  app.get("/register", function(req, res) {
+    res.sendFile(path.join(__dirname, "../client/public/html/register.html"));
+  });
+    
+  // Load listing page with all products available. Users will be able to search on this page
+  // Results will be populated on this page via the API routes
+  app.get("/listProducts", function(req, res) {
+    res.sendFile(path.join(__dirname, "../client/public/html/list.html"));
+  });
+
+  // Load the form to submit a new product 
+  app.get("/postProduct", function(req, res) {
+    res.sendFile(path.join(__dirname, "../client/public/html/postProduct.html"));
+  });
+
+  // Load the form to checkout after you selected an item to buy 
+  app.get("/checkout", function(req, res) {
+    res.sendFile(path.join(__dirname, "../client/public/html/checkout.html"));
+  });
+ 
 };

@@ -3,9 +3,12 @@ var express = require("express");
 var bodyParser = require("body-parser");
 const path = require('path');
 const cookieParser = require('cookie-parser');
-var exphbs = require("express-handlebars");
 const customAuthMiddleware = require('./middleware/custom-auth-middleware');
 
+//Controller Import
+const userController = require('./controllers/user-controller');
+
+//Connect db
 var db = require("./models/index");
 
 // directory references
@@ -22,31 +25,25 @@ app.use(cookieParser());
 app.use(customAuthMiddleware);
 app.use(express.static(`${clientDir}/public`));
 
-// Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
-app.set("view engine", "handlebars");
+
+app.use(express.static("public"));
+
 
 // Routes
-require("../routes/post-api-routes")(app);
 require("../routes/htmlRoutes")(app);
+require("../routes/product-api-routes")(app);
 
-// Render 404 page for any unmatched routes
-app.get("*", function(req, res) {
-  res.render("404");
-});
+//Hook up controllers
+app.use(userController);
 
 
-var syncOptions = { force: true }; //TODO change this to false later
+
+var syncOptions = { force: false }; //TODO change this to false later
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
 if (process.env.NODE_ENV === "test") {
-  syncOptions.force = true;
+  syncOptions.force = false;
 }
 
 // Starting the server, syncing our models ------------------------------------/
