@@ -7,10 +7,9 @@ html, body, section {
     font-family: sans-serif;
     font-size: 1.25rem;
     line-height: 150%;
-    text-shadow: 0 2px 2px #b6701e;
   }
   
-  div {
+  .main-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,3 +73,38 @@ html, body, section {
   #searchForm {
     width: 500px;
   }
+
+/* login.html */
+
+#owner-username {
+  width: 100%;
+}
+
+#owner-password {
+  width: 100%;
+}
+
+.login-container {
+  display: flex;
+  margin-top: 50px;
+}
+
+#login-form {
+  margin: auto;
+}
+
+#login-button {
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon-block {
+  color: black;
+  cursor: pointer;
+  margin: 15px;
+}
