@@ -39,7 +39,12 @@ module.exports = function(sequelize, DataTypes) {
       time_unit: {
           type: DataTypes.STRING,
           allowNull: false
+      },
+      owner_id: {
+        type: DataTypes.REAL,
+        allowNull: false
       }
+
     });
   
     Product.associate = function(models) {
