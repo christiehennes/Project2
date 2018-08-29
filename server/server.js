@@ -36,9 +36,7 @@ require("../routes/product-api-routes")(app);
 //Hook up controllers
 app.use(userController);
 
-
-
-var syncOptions = { force: true }; //TODO change this to false later
+var syncOptions = { force: false }; //TODO change this to false later
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`

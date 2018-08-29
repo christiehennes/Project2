@@ -6,6 +6,8 @@ const Op = Sequelize.Op;
 
 module.exports = function(app) {
 
+  // SEARCH FUNCTIONS
+
   // Display all products
   app.get("/api/products", function(req, res) {
     var query = {};
@@ -28,6 +30,8 @@ module.exports = function(app) {
       res.json(dbProduct);
     });
   });
+
+  // CREATE AND UPDATE PRODUCT FIELDS
 
   // POST route for saving a new product
   app.post("/api/addProduct", function(req, res) {
