@@ -1,3 +1,28 @@
+// let checkLogin = require('./checkLogin.js');
+
+//Check to see if user is already logged in when they hit the login screen
+window.onload = function() {
+
+  //Check to see if the user is logged in
+  function isLoggedIn(){
+
+    $.get('/me', function(user, err){
+
+        if(user) return true;
+        return false;
+        if(err) alert(err);
+    });
+}
+
+  if (isLoggedIn) {
+    console.log("user already logged in");
+    $('#already-logged-in-modal').modal('show');
+    window.location = '/postProduct'
+  }
+};
+
+
+//All other function calls if they are no logged in
 $(document).ready(function() {
 
 
@@ -64,8 +89,6 @@ $(document).ready(function() {
           window.location.reload()
         })
       }
-
-
 
 
       $(document).on('click', '#register-button', register);

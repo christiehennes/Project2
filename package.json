@@ -21,6 +21,7 @@
     "fs": "0.0.1-security",
     "mysql2": "^1.6.1",
     "path": "^0.12.7",
+    "require": "^2.4.20",
     "sequelize": "^4.38.0",
     "sequelize-cli": "^4.0.0"
   },
