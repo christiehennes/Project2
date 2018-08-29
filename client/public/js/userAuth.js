@@ -1,3 +1,23 @@
+// let checkLogin = require('./checkLogin.js');
+import {isLoggedIn} from './Functions/checkLogin.js';
+
+//Check to see if user is already logged in when they hit the login screen
+window.onload = function() {
+
+  //Function to redirect them to a new page 
+  function redirectToPostProduct(){
+    console.log("user already logged in");
+        window.location = '/postProduct';
+  }
+
+  if (window.location.pathname == '/login') {
+    console.log("on the login page")
+    isLoggedIn(redirectToPostProduct); //Function with a callback to redirect the page if they are already logged in
+  }
+}
+
+
+//All other function calls if they are no logged in
 $(document).ready(function() {
 
 
@@ -55,6 +75,7 @@ $(document).ready(function() {
       }
 
       function logout(e) {
+        console.log("clicked log out");
         e.preventDefault();
         $.ajax('/logout', {
           method: 'DELETE',
@@ -64,8 +85,6 @@ $(document).ready(function() {
           window.location.reload()
         })
       }
-
-
 
 
       $(document).on('click', '#register-button', register);
