@@ -5,7 +5,6 @@ $(document).ready(function() {
     let currentUser; //Create a local variable to hold the curren logged in user
 
     //Get the current user logged in
-    // function getCurrentUser(){
         $.get('/me', function(user, err){
 
             if(user){
@@ -28,10 +27,8 @@ $(document).ready(function() {
     
             if(err) alert(err);
         });
-    // };
     
     
-
     // Click handler for submit button
     $(document).on('click', '#submit-button', function(){
         console.log("button was clicked");
@@ -46,11 +43,8 @@ $(document).ready(function() {
     let price = $('#product-price').val();
     let timeAmt = $('#product-time-amount').val();
     let timeInterval = $('#product-time-interval').val();
-    // let currentUser = getCurrentUser();
 
-    console.log("CURRENT USER: " + currentUser);
-
-    //TODO: perform validation to make sure they are all valid
+    //TODO: Rami: perform validation to make sure they are all valid
 
     //Perform post to DB (only if a user is logged in)
     $.ajax('/api/addProduct', 
