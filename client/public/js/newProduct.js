@@ -62,9 +62,13 @@ $(document).ready(function() {
             time_unit: timeInterval,
             OwnerId: currentUser.id
         }
-    }).then(function(){
+    }).then(function(err){
+
+        // if (err) throw err;
+
         console.log("new product added");
-        //TODO: Make the result of posting a new product better, maybe take them to the page of the individual project, or give them options to view all products / view this product / post another product
+        $('#modal').modal('show');
+
     })
 
 
