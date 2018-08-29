@@ -5,29 +5,38 @@ $(document).ready(function() {
     let currentUser; //Create a local variable to hold the curren logged in user
 
     //Get the current user logged in
-        $.get('/me', function(user, err){
 
-            if(user){
-                $('#user-logged-in').append(
-                    `<div>Welcome ${user.username}! <button id="logout">Logout</button></div>
-                    `
-                );
-                console.log("A user is currently logged in: ");
-                console.log(user.username);
-                console.log(user);
 
-                currentUser = user;
-                return user;
-            }
-            else{
-                console.log("no user");
-                //TODO: CH: Display a message to the user they need to be logged in first, and then take them to the login page. We don't want someone to post a product without being logged in.
-                return;
-            }
+
+    $.ajax('/me', {
+        method: 'GET'
+      }).then(function(user){
+
+        if(user){
+            $('#user-logged-in').append(
+                `<div>Welcome ${user.username}! <button id="logout">Logout</button></div>
+                `
+            );
+            console.log("A user is currently logged in: ");
+            console.log(user.username);
+            console.log(user);
+
+            currentUser = user;
+            return user;
+        }
+        else{
+            console.log("no user");
+            //TODO: CH: Display a message to the user they need to be logged in first, and then take them to the login page. We don't want someone to post a product without being logged in.
+            return;
+        }
+
+    }).fail(function(err){
+        // alert(err.responseText);
+        window.location = '/login'
+        // return false;
+    }); 
     
-            if(err) alert(err);
-        });
-    
+                
     
     // Click handler for submit button
     $(document).on('click', '#submit-button', function(){

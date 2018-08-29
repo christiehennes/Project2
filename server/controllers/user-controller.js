@@ -101,6 +101,7 @@ router.get('/me', (req, res) => {
   res.status(404).send(
     { errors: [{ message: 'missing auth token' }] }
   );
+
 });
 
 // export the router so we can pass the routes to our server

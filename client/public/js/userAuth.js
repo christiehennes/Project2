@@ -5,21 +5,28 @@ window.onload = function() {
 
   //Check to see if the user is logged in
   function isLoggedIn(){
-
-    $.get('/me', function(user, err){
-
+    console.log("here");
+      console.log("window is login");
+      $.ajax('/me', {
+        method: 'GET'
+      }).then(function(){
+        console.log(user);
         if(user) return true;
+      }).fail(function(err){
+        alert(err.responseText);
         return false;
-        if(err) alert(err);
-    });
-}
-
-  if (isLoggedIn) {
-    console.log("user already logged in");
-    $('#already-logged-in-modal').modal('show');
-    window.location = '/postProduct'
+      }); 
+  
   }
-};
+
+  if (window.location.pathname == '/login') {
+      if (isLoggedIn()) {
+        console.log("user already logged in");
+        $('#already-logged-in-modal').modal('show');
+        window.location = '/postProduct';
+      }
+  }
+}
 
 
 //All other function calls if they are no logged in
@@ -80,6 +87,7 @@ $(document).ready(function() {
       }
 
       function logout(e) {
+        console.log("clicked log out");
         e.preventDefault();
         $.ajax('/logout', {
           method: 'DELETE',
