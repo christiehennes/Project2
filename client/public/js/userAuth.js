@@ -1,30 +1,18 @@
 // let checkLogin = require('./checkLogin.js');
+import {isLoggedIn} from './Functions/checkLogin.js';
 
 //Check to see if user is already logged in when they hit the login screen
 window.onload = function() {
 
-  //Check to see if the user is logged in
-  function isLoggedIn(){
-    console.log("here");
-      console.log("window is login");
-      $.ajax('/me', {
-        method: 'GET'
-      }).then(function(){
-        console.log(user);
-        if(user) return true;
-      }).fail(function(err){
-        alert(err.responseText);
-        return false;
-      }); 
-  
+  //Function to redirect them to a new page 
+  function redirectToPostProduct(){
+    console.log("user already logged in");
+        window.location = '/postProduct';
   }
 
   if (window.location.pathname == '/login') {
-      if (isLoggedIn()) {
-        console.log("user already logged in");
-        $('#already-logged-in-modal').modal('show');
-        window.location = '/postProduct';
-      }
+    console.log("on the login page")
+    isLoggedIn(redirectToPostProduct); //Function with a callback to redirect the page if they are already logged in
   }
 }
 
