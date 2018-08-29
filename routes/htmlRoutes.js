@@ -18,7 +18,7 @@ module.exports = function(app) {
   // Load listing page with all products available. Users will be able to search on this page
   // Results will be populated on this page via the API routes
   app.get("/listProducts", function(req, res) {
-    res.sendFile(path.join(__dirname, "../client/public/html/list.html"));
+    res.sendFile(path.join(__dirname, "../client/public/html/listProducts.html"));
   });
 
   // Load the form to submit a new product 
