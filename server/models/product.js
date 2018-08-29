@@ -40,9 +40,9 @@ module.exports = function(sequelize, DataTypes) {
           type: DataTypes.STRING,
           allowNull: false
       },
-      owner_id: {
-        type: DataTypes.REAL,
-        allowNull: false
+      rented:{
+        type: DataTypes.BOOLEAN,
+        default: "false"
       }
 
     });
