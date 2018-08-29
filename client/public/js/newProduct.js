@@ -2,6 +2,7 @@
 
 $(document).ready(function() {
 
+    //Get the current user logged in
     $.get('/me', function(user, err){
 
         if(user){
@@ -14,6 +15,7 @@ $(document).ready(function() {
         }
         else{
             console.log("no user");
+            //TODO: Display a message to the user they need to be logged in first, and then take them to the login page. We don't want someone to post a product without being logged in.
             return;
         }
 
@@ -27,7 +29,7 @@ $(document).ready(function() {
     $(document).on('click', '#submit-button', function(){
         console.log("button was clicked");
 
-        //Get all the fields from the different forms on the page
+    //Get all the fields from the different forms on the page
     let name = $('#product-name').val().trim();
     let category = $('#product-category').val();
     let description = $('#product-description').val();
@@ -38,14 +40,9 @@ $(document).ready(function() {
     let timeAmt = $('#product-time-amount').val();
     let timeInterval = $('#product-time-interval').val();
 
+    //TODO: perform validation to make sure they are all valid
 
-    console.log("NAME: " + name);
-
-
-
-    //TODO perform validation to make sure they are all valid
-
-    //Perform post to DB
+    //Perform post to DB (only if a user is logged in)
     $.ajax('/api/addProduct', 
     {
         method: 'POST',
@@ -63,6 +60,7 @@ $(document).ready(function() {
         }
     }).then(function(){
         console.log("new product added");
+        //TODO: Make the result of posting a new product better, maybe take them to the page of the individual project, or give them options to view all products / view this product / post another product
     })
 
 
