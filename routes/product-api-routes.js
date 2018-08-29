@@ -6,6 +6,8 @@ const Op = Sequelize.Op;
 
 module.exports = function(app) {
 
+  // SEARCH FUNCTIONS
+
   // Display all products
   app.get("/api/products", function(req, res) {
     var query = {};
@@ -22,12 +24,14 @@ module.exports = function(app) {
     
     db.Product.findAll({
       where: {
-        [Op.or]: [{category: req.params.category}, {name: req.params.category}]
+        [Op.or]: [{category: req.params.category}, {name: req.params.category}, {id:req.params.category}]
       },
     }).then(function(dbProduct) {
       res.json(dbProduct);
     });
   });
+
+  // CREATE AND UPDATE PRODUCT FIELDS
 
   // POST route for saving a new product
   app.post("/api/addProduct", function(req, res) {

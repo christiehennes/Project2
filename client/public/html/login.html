@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="../css/main.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-    <script src="/js/userAuth.js" type="text/javascript"></script>
-
+    <script src="/js/userAuth.js" type="module"></script>
+    
 </head>
 
 <body>
@@ -62,7 +62,21 @@
                 </p>
             </div>
 
-    </div>
+    </form>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="already-logged-in-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div>Already logged in. Redirecting..</div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
 
     <!-- Custom Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"

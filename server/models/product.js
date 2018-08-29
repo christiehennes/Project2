@@ -39,7 +39,12 @@ module.exports = function(sequelize, DataTypes) {
       time_unit: {
           type: DataTypes.STRING,
           allowNull: false
+      },
+      rented:{
+        type: DataTypes.BOOLEAN,
+        default: "false"
       }
+
     });
   
     Product.associate = function(models) {
