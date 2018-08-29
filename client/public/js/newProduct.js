@@ -33,6 +33,7 @@ $(document).ready(function() {
     let description = $('#product-description').val();
     let image = $('#product-image').val();
     let location = $('#product-location').val();
+    let dateAvail = $('#product-date-available').val();
     let price = $('#product-price').val();
     let timeAmt = $('#product-time-amount').val();
     let timeInterval = $('#product-time-interval').val();
@@ -45,6 +46,25 @@ $(document).ready(function() {
     //TODO perform validation to make sure they are all valid
 
     //Perform post to DB
+    $.ajax('/api/addProduct', 
+    {
+        method: 'POST',
+        data: { 
+            name: name,
+            description: description,
+            image_url: image,
+            location: location,
+            category: category,
+            date_available: dateAvail,
+            price: price,
+            period_requested: timeAmt,
+            time_unit: timeInterval,
+            owner_id: user.id
+        }
+    }).then(function(){
+        console.log("new product added");
+    })
+
 
     })
 
