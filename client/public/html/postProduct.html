@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
+    <link rel="stylesheet" href="datepicker.css">
     <link rel="stylesheet" href="../css/main.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script> 
     <script src="/js/userAuth.js" type="module"></script>
     <script src="/js/newProduct.js" type="module"></script>
+
     
 
 
@@ -86,7 +88,9 @@
             <!-- TODO add a date / calendar selector -->
             <div class="form-group">
                 <label for="exampleFormControlInput1">Date Available</label>
-                <input type="input" class="form-control" id="product-date-available" placeholder="">
+                <input type="date" id="product-date-available">
+                <!-- <input type="input" class="form-control" id="product-date-available" placeholder=""> -->
+                <!-- <input type="text" id="datepicker"> -->
               </div>
 
 
@@ -144,7 +148,7 @@
       <div id="logout-placeholder"></div>  
 
 <!-- Custom Script -->
-
+<script src="datepicker.min.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
