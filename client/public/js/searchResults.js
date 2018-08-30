@@ -52,9 +52,9 @@ function displayProducts(body){
 
         let productCard = 
         `
-        <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="${element.image_url}" alt="Card image cap">
-        <div class="card-body">
+        <div class="product-card">
+        <img class="product-image" src="${element.image_url}">
+        <div class="product-card-body">
             <h5 class="card-title">${element.name}</h5>
             <p class="card-text">${element.description}</p>
             <p class="card-text">${element.price}</p>

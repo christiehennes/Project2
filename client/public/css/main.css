@@ -108,3 +108,22 @@ html, body, section {
   cursor: pointer;
   margin: 15px;
 }
+
+
+
+
+/* List Products Page */
+
+.list-container{
+  flex-wrap: wrap;
+}
+
+.product-card{
+  width: 30%;
+  border: 1px solid gray;
+
+}
+
+.product-card-body{
+  text-align: center;
+}
