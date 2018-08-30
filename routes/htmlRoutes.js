@@ -17,6 +17,11 @@ module.exports = function(app) {
     
   // Load listing page with all products available. Users will be able to search on this page
   // Results will be populated on this page via the API routes
+
+  app.get("/search", function(req, res) {
+    res.sendFile(path.join(__dirname, "../client/public/html/search.html"));
+  });
+
   app.get("/listProducts", function(req, res) {
     res.sendFile(path.join(__dirname, "../client/public/html/listProducts.html"));
   });

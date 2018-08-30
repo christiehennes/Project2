@@ -4,9 +4,8 @@ export function isLoggedIn(successCallback){
       $.ajax('/me', {
         method: 'GET'
       }).then(function(user){
-        console.log("line 7 " + user);
         if(user) {
-            console.log("there is a user")
+            console.log("there is a user: " + user.username)
             successCallback();
             return true;
         }
@@ -16,5 +15,5 @@ export function isLoggedIn(successCallback){
 
         return false;
       }); 
-  
+
   }

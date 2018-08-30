@@ -24,7 +24,9 @@ $(document).ready(function() {
          
     
     // Click handler for submit button
-    $(document).on('click', '#submit-button', function(){
+    $(document).on('click', '#submit-button', function(e){
+
+        e.preventDefault();
         console.log("button was clicked");
 
     //Get all the fields from the different forms on the page
@@ -69,6 +71,16 @@ $(document).ready(function() {
     })
 
 
+    $(document).on('click', '#modal-post-product', function(e){ 
+        e.preventDefault();
+        window.location = '/postProduct';
+    })
+
+    $(document).on('click', '#modal-view-all-products', function(e){ 
+        e.preventDefault();
+        console.log('clicked');
+        window.location = '/listProducts';
+    })
 
 
 });
