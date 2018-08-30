@@ -27,7 +27,7 @@
             <a href="/listProducts" class="icon-block">
                 <i class="fas fa-search"></i>
             </a>
-            <a href="/login" class="icon-block">
+            <a href="" class="icon-block" id="user-icon" data-status="loggedOut">
                 <i class="fas fa-user"></i>
             </a>
             <a href="/checkout" class="icon-block">
@@ -58,7 +58,7 @@
                 <button type="button" class="btn btn-primary" id="login-button">SIGN IN</button>
 
                 <p>
-                    <a href="/account/register" id="customer_register_link">Create account</a>
+                    <a href="/register" id="customer_register_link">Create account</a>
                 </p>
             </div>
 
@@ -77,6 +77,9 @@
             </div>
             </div>
         </div>
+
+      <!-- Logout Modal: Placeholder if we need to display -->
+      <div id="logout-placeholder"></div>  
 
     <!-- Custom Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
