@@ -1,5 +1,5 @@
 export function isLoggedIn(successCallback){
-  if (window.location.pathname == '/login'){
+
     console.log("here");
       $.ajax('/me', {
         method: 'GET'
@@ -16,6 +16,5 @@ export function isLoggedIn(successCallback){
 
         return false;
       }); 
-    }
-  
+
   }
