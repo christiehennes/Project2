@@ -19,6 +19,7 @@
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "fs": "0.0.1-security",
+    "js-datepicker": "^3.3.2",
     "mysql2": "^1.6.1",
     "path": "^0.12.7",
     "require": "^2.4.20",

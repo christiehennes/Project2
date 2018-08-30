@@ -127,3 +127,7 @@ html, body, section {
 .product-card-body{
   text-align: center;
 }
+
+.product-image{
+  max-width: 100%;
+}
