@@ -11,7 +11,6 @@ export function isLoggedIn(callback){
             return;
         }
       }).fail(function(err){
-        alert(err.responseText);
         return;
       }); 
   

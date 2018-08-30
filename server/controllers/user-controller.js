@@ -98,6 +98,7 @@ router.get('/me', (req, res) => {
   if (req.user) {
     return res.send(req.user);
   }
+  return;
   res.status(404).send(
     { errors: [{ message: 'missing auth token' }] }
   );
