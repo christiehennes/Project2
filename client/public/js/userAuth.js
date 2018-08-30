@@ -10,6 +10,7 @@ window.onload = function() {
         window.location = '/postProduct';
   }
 
+  //If they are on the login screen and logged in, redirect them
   if (window.location.pathname == '/login') {
     console.log("on the login page")
     isLoggedIn(redirectToPostProduct); //Function with a callback to redirect the page if they are already logged in
@@ -38,6 +39,8 @@ $(document).ready(function() {
         }).then(({ user, authToken }) => {
           $.cookie('auth_token', authToken.token, { expires: 7 });
           if (!user) throw new Error('invalid username or password');
+
+          $('#user-icon').data("status", "loggedIn");
           window.location = '/postProduct'
         }).fail(function(err){
             alert(err.responseText);
@@ -65,6 +68,8 @@ $(document).ready(function() {
           if (user && authToken.token) {
               console.log("new user created!!");
             $.cookie('auth_token', authToken.token, { expires: 7 });
+
+            $('#user-icon').data("status", "loggedIn");
             window.location = '/postProduct'
           } else {
             throw new Error('something went wrong')
@@ -81,14 +86,53 @@ $(document).ready(function() {
           method: 'DELETE',
           data: {}
         }).then(user => {
+          $('#user-icon').data("status", "loggedOut");
           $.removeCookie('auth_token');
-          window.location.reload()
+          window.location = '/login'
         })
+      }
+
+      //Function to update menu link depending if the user is logged in or not
+      function updateMenu(e) {
+
+        e.preventDefault();
+        console.log("in update menu");
+        let action = $('#user-icon').data("status");
+        console.log(action);
+        if(action === 'loggedIn'){
+          //Display a modal to confirm the user wants to logout
+          console.log("currently logged in");
+
+          let logoutModal = `
+          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div>Are you sure you want to logout?</div>
+                    <button id="logout-button">Logout</button>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+          `;
+
+          $('#logout-placeholder').append(logoutModal);
+          $('#logoutModal').modal('show');
+
+        }
+        else if(action === 'loggedOut'){
+          window.location = '/login'; //take them to the login page 
+        }
       }
 
 
       $(document).on('click', '#register-button', register);
       $(document).on('click', '#login-button', login);
-      $(document).on('click', '#logout', logout);
+      $(document).on('click', '#logout-button', logout);
+      $(document).on('click', '#user-icon', updateMenu);
 
 });

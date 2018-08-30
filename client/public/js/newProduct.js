@@ -1,42 +1,27 @@
+import {isLoggedIn} from './Functions/checkLogin.js';
 
 
 $(document).ready(function() {
 
     let currentUser; //Create a local variable to hold the curren logged in user
 
-    //Get the current user logged in
+    //Check to see if a user is logged in. If they are, get their user info. If not, redirect to the login page
+    isLoggedIn(function(){
+        console.log("inside newproduct, a user is logged in");
+        $('#user-icon').data("status", "loggedIn");
 
-
-
-    $.ajax('/me', {
-        method: 'GET'
-      }).then(function(user){
-
-        if(user){
-            $('#user-logged-in').append(
-                `<div>Welcome ${user.username}! <button id="logout">Logout</button></div>
-                `
-            );
-            console.log("A user is currently logged in: ");
-            console.log(user.username);
-            console.log(user);
+        $.ajax('/me', {
+            method: 'GET'
+          }).then(function(user){
 
             currentUser = user;
-            return user;
-        }
-        else{
-            console.log("no user");
-            //TODO: CH: Display a message to the user they need to be logged in first, and then take them to the login page. We don't want someone to post a product without being logged in.
             return;
-        }
+        }).fail(function(err){
+            window.location = '/login'
 
-    }).fail(function(err){
-        // alert(err.responseText);
-        window.location = '/login'
-        // return false;
-    }); 
-    
-                
+        }); 
+    })
+         
     
     // Click handler for submit button
     $(document).on('click', '#submit-button', function(){

@@ -1,18 +1,20 @@
-export function isLoggedIn(callback){
+export function isLoggedIn(successCallback){
 
     console.log("here");
       $.ajax('/me', {
         method: 'GET'
       }).then(function(user){
-        console.log(user);
+        console.log("line 7 " + user);
         if(user) {
             console.log("there is a user")
-            callback();
-            return;
+            successCallback();
+            return true;
         }
+        
       }).fail(function(err){
-        alert(err.responseText);
-        return;
+        console.log("failed");
+
+        return false;
       }); 
   
   }
