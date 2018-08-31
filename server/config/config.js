@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
-    "username": process.env.DEV_DB_USER,
-    "password": process.env.DEV_DB_PASSWORD,
+    "username": process.env.DEV_DB_USER || "root",
+    "password": process.env.DEV_DB_PASSWORD || "Ccmi!1974",
     "database": "rentee_db",
     "host": "localhost",
     "dialect": "mysql"

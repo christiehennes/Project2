@@ -53,7 +53,7 @@ p {
 .search.active,
 .search:hover {
   width: 200px;
-  margin-right: 0px;
+  margin-right: auto;
 }
 .search.active:after,
 .search:hover:after {
@@ -68,4 +68,11 @@ p {
   color: inherit;
   background: transparent;
   outline-width: 0px;
+}
+
+#search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
 }
