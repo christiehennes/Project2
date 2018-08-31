@@ -13,7 +13,10 @@ $(document).ready(function(){
 
 	// Click handlers
 	$(document).on('click', '#submit-search', function(e){
-			window.location = '/listProducts';
+		let searchParam = $('#inpt_search').val();
+		if (searchParam === '') {searchParam = 'all'}
+		console.log(searchParam);
+			window.location = `/search/:${searchParam}`;
 	})
 
 
