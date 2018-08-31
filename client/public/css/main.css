@@ -3,6 +3,11 @@ html, body, section {
     height: 100%;
   }
   
+  @font-face {
+    font-family: AvenirNextLTPro-Heavy;
+    src: url(../css/AvenirNextLTPro-Heavy.woff)
+  }
+  
   body {
     font-family: sans-serif;
     font-size: 1.25rem;
@@ -76,6 +81,10 @@ html, body, section {
 
 /* login.html */
 
+h1 {
+  font-family: AvenirNextLTPro-Heavy; 
+}
+
 #owner-username {
   width: 100%;
 }
@@ -109,7 +118,9 @@ html, body, section {
   margin: 15px;
 }
 
-
+#nav-font {
+  font-family: AvenirNextLTPro-Heavy;
+}
 
 
 /* List Products Page */
@@ -130,4 +141,12 @@ html, body, section {
 
 .product-image{
   max-width: 100%;
+}
+
+/* register.html */
+
+#register-form {
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
