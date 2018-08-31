@@ -1,0 +1,19 @@
+@font-face {
+    font-family: AvenirNextLTPro-Heavy;
+    src: url(../css/AvenirNextLTPro-Heavy.woff)
+  }
+
+#nav-font {
+    font-family: AvenirNextLTPro-Heavy;
+  }
+
+  .icons {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .icon-block {
+    color: black;
+    cursor: pointer;
+    margin: 15px;
+  }
