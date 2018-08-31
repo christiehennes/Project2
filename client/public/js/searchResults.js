@@ -20,7 +20,6 @@ window.onload = function() {
 $(document).ready(function(){
 
 
-    //TODO Need to figure out how to grab search term from other page 
     // Click handlers
     $(document).on('click', '#submit-search', function(e){
             
@@ -31,7 +30,23 @@ $(document).ready(function(){
 
     })	
 
+    $(document).on('click', '#rent-button', function(e){
+        e.preventDefault();
+        console.log($(this).data('id'));
+        console.log("clicked");
+
+        //set this in session variable to put in your cart
+        let toStore = $(this).data('id'); 
+        //Build a string separated by commas 
+        if(sessionStorage.getItem("cart") !== null){
+            toStore = toStore + ',' + sessionStorage.getItem("cart")
+        }
+        sessionStorage.setItem("cart", toStore);
+    })
+
 })
+
+// FUNCTION DECLARATIONS
 
 
 function retrieveAllProducts() {
@@ -68,7 +83,6 @@ function displayProducts(body){
     //Loop through body of response and create a card for each item and append it to the element div 
 
     body.forEach(element => {
-
         let productCard = 
         `
         <div class="product-card">
@@ -78,7 +92,7 @@ function displayProducts(body){
             <p class="card-text">${element.description}</p>
             <p class="card-text">${element.price}</p>
             <p class="card-text">${element.date_available}</p>
-            <a href="#" class="btn btn-primary">Rent It</a>
+            <button class="btn btn-primary" id="rent-button" data-id=${element.id}>Rent It</button>
         </div>
         </div>
         `;
