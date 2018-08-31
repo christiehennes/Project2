@@ -9,9 +9,12 @@ window.onload = function() {
     if (searchParam == 'all'){
         retrieveAllProducts();
     }
+    else{
+        retrieveSearchedProducts(searchParam);
+    }
     //Need to add more logic for the rest of the search functionality
-}
 
+}
 
 
 $(document).ready(function(){
@@ -36,8 +39,22 @@ function retrieveAllProducts() {
     //Get all products
     $.ajax('/api/products', {method: 'GET'})
     .then(function(response){
-        // window.location = '/listProducts'
         console.log("completed ajax");
+        displayProducts(response);
+        
+    });
+
+}
+
+function retrieveSearchedProducts(term){
+
+    let url =  '/api/products/search/' + term;
+    console.log(url);
+
+    $.ajax(url, {method: 'GET'})
+    .then(function(response){
+        console.log("completed ajax");
+        console.log(response);
         displayProducts(response);
         
     });
