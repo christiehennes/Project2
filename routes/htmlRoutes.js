@@ -22,7 +22,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../client/public/html/search.html"));
   });
 
-  app.get("/listProducts", function(req, res) {
+  app.get("/search/:param", function(req, res) {
     res.sendFile(path.join(__dirname, "../client/public/html/listProducts.html"));
   });
 

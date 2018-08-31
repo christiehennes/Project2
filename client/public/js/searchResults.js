@@ -1,9 +1,15 @@
 window.onload = function() {
 
-    //Grab search results from search
+    //Grab search results from search and then use this to perform your search
+    let searchParam = window.location.href.split('search/:')[1];
+    // console.log(searchParam);
+
 
     //If empty, display all 
-    retrieveAllProducts();
+    if (searchParam == 'all'){
+        retrieveAllProducts();
+    }
+    //Need to add more logic for the rest of the search functionality
 }
 
 
@@ -41,10 +47,6 @@ function retrieveAllProducts() {
 
 
 function displayProducts(body){
-
-    console.log("here ");
-
-    console.log("BODY: " + body );
 
     //Loop through body of response and create a card for each item and append it to the element div 
 
