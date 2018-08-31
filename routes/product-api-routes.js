@@ -19,17 +19,52 @@ module.exports = function(app) {
     });
   });
 
-  // Display certain category or exact product
-  app.get("/api/products/:category", function(req, res) {
+    // Display certain category
+    app.get("/api/products/category/:category", function(req, res) {
     
+      db.Product.findAll({
+        where: {
+          category: req.params.category
+        },
+      }).then(function(dbProduct) {
+        res.json(dbProduct);
+      });
+    });
+
+    // Display certain category
+    app.get("/api/products/id/:id", function(req, res) {
+
     db.Product.findAll({
       where: {
-        [Op.or]: [{category: req.params.category}, {name: req.params.category}, {id:req.params.category}]
+        id: req.params.id
       },
     }).then(function(dbProduct) {
       res.json(dbProduct);
     });
   });
+
+  // Display search for specific parameter
+  app.get("/api/products/search/:param", function(req, res) {
+    
+    db.Product.findAll({ 
+      where:  {
+        [Op.or]: [
+          {
+            name: {
+              [Op.like]: `%${req.params.param}%`
+            }
+          }]
+        
+      }
+    }).then(function(dbProduct) {
+      res.json(dbProduct)
+    })
+  });
+
+
+
+  
+
 
   // CREATE AND UPDATE PRODUCT FIELDS
 

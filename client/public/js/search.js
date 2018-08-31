@@ -21,3 +21,6 @@ $(document).ready(function(){
 
 
 })
+
+
+// where product_title like "%term%", put an index on it (??)
