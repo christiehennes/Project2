@@ -14,9 +14,17 @@ $(document).ready(function(){
 	// Click handlers
 	$(document).on('click', '#submit-search', function(e){
 		let searchParam = $('#inpt_search').val();
-		if (searchParam === '') {searchParam = 'all'}
-		console.log(searchParam);
-			window.location = `/search/:${searchParam}`;
+		let searchCategory = $('#search-category').val();
+		if (searchParam === '' && searchCategory === 'Select Category') {
+			searchParam = 'all';
+			window.location = `/search/${searchParam}`;
+		}
+		else if(searchCategory !== 'Select Category'){
+			console.log(searchCategory);
+			window.location = `/search/category/${searchCategory}`
+		}else{
+			window.location = `/search/${searchParam}`;
+		}
 	})
 
 

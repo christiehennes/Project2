@@ -26,6 +26,10 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../client/public/html/listProducts.html"));
   });
 
+  app.get("/search/category/:param", function(req, res) {
+    res.sendFile(path.join(__dirname, "../client/public/html/listProducts.html"));
+  });
+
   // Load the form to submit a new product 
   app.get("/postProduct", function(req, res) {
     res.sendFile(path.join(__dirname, "../client/public/html/postProduct.html"));
