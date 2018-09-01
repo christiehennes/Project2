@@ -1,17 +1,27 @@
 window.onload = function() {
 
     //Grab search results from search and then use this to perform your search
-    let searchParam = window.location.href.split('search/:')[1];
-    // console.log(searchParam);
+    // let searchParam = window.location.href.split('search/:')[1];
+    let searchParam = window.location.href.split('/');
+
+    if(searchParam[4] === 'category'){
+        console.log("this is a categpry");
+        retrieveCategoryProducts(searchParam[5]);
+    }
+    else{
+        if (searchParam[4] == 'all'){
+            retrieveAllProducts();
+        }
+        else{
+            retrieveSearchedProducts(searchParam[4]);
+        }
+    }
+
+    console.log(searchParam);
 
 
     //If empty, display all 
-    if (searchParam == 'all'){
-        retrieveAllProducts();
-    }
-    else{
-        retrieveSearchedProducts(searchParam);
-    }
+    
     //Need to add more logic for the rest of the search functionality
 
 }
@@ -65,6 +75,19 @@ function retrieveSearchedProducts(term){
 
     let url =  '/api/products/search/' + term;
     console.log(url);
+
+    $.ajax(url, {method: 'GET'})
+    .then(function(response){
+        console.log("completed ajax");
+        console.log(response);
+        displayProducts(response);
+        
+    });
+
+}
+
+function retrieveCategoryProducts(cat){
+    let url = '/api/products/category/' + cat;
 
     $.ajax(url, {method: 'GET'})
     .then(function(response){

@@ -31,7 +31,7 @@ module.exports = function(app) {
       });
     });
 
-    // Display certain category
+    // Display certain product by id
     app.get("/api/products/id/:id", function(req, res) {
 
     db.Product.findAll({
