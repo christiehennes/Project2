@@ -16,7 +16,7 @@ html, body, section {
   
   .main-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
   }
   /* Pattern styles */
@@ -52,6 +52,9 @@ html, body, section {
       text-align: center;
   }
 
+  #left-text {
+  }
+
   buttonRent {
       max-width: 50px;
       margin: 0 auto;
@@ -60,6 +63,14 @@ html, body, section {
   buttonList {
     max-width: 50px;
     margin: 0 auto;
+}
+
+/* postProduct.html */
+.post-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
 }
 
 /* rent.html */ 

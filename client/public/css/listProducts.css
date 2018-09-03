@@ -7,7 +7,7 @@ body {
 }
 body {
   background: rgb(243, 211, 29);
-  font: 13px monospace;
+  /* font: 13px monospace; Shrinking the menu bar */
   color: rgb(10, 8, 8);
 }
 p {
