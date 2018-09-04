@@ -52,9 +52,6 @@ html, body, section {
       text-align: center;
   }
 
-  #left-text {
-  }
-
   buttonRent {
       max-width: 50px;
       margin: 0 auto;
@@ -131,6 +128,44 @@ h1 {
 
 #nav-font {
   font-family: AvenirNextLTPro-Heavy;
+}
+
+.modal-header {
+  text-align: center !important;
+  font-family: AvenirNextLTPro-Heavy;
+  border-bottom: 0;
+}
+
+.modal-body {
+  padding-top: 0px;
+}
+
+.modal-footer {
+  border-top: 0;
+  padding-top: 0;
+  justify-content: flex-start;
+}
+
+#emailHelp {
+  margin-bottom: 5px;
+}
+
+#modalButton {
+  background-color: black;
+  border: 2px solid black !important;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block !important;
+  font-size: 16px;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+
+#modalButton:hover {
+  background-color: white;
+  color: black;
 }
 
 
