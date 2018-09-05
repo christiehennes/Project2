@@ -70,6 +70,23 @@ html, body, section {
   margin: 20px;
 }
 
+#submit-button {
+  background-color: black;
+  border: 2px solid black !important;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block !important;
+  font-size: 16px;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+
+#submit-button:hover {
+  background-color: white;
+  color: black;
+}
+
 /* rent.html */ 
 
   #searchBar {
@@ -113,6 +130,20 @@ h1 {
 #login-button {
   width: 100px;
   margin-bottom: 15px;
+  background-color: black;
+  border: 2px solid black !important;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block !important;
+  font-size: 16px;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+
+#login-button:hover {
+  background-color: white;
+  color: black;
 }
 
 .icons {
@@ -173,11 +204,14 @@ h1 {
 
 .list-container{
   flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px;
 }
 
 .product-card{
   width: 30%;
   border: 1px solid gray;
+  max-height: fit-content;
 
 }
 
@@ -187,6 +221,25 @@ h1 {
 
 .product-image{
   max-width: 100%;
+  max-height: 200px;
+}
+
+#rent-button {
+  background-color: black;
+  border: 2px solid black !important;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block !important;
+  font-size: 16px;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  margin: 5px;
+}
+
+#rent-button:hover {
+  background-color: white;
+  color: black;
 }
 
 /* register.html */
