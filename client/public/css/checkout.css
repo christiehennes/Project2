@@ -3,6 +3,10 @@
     src: url(../css/AvenirNextLTPro-Heavy.woff)
   }
 
+a {
+  color: black;
+}
+
 #nav-font {
     font-family: AvenirNextLTPro-Heavy;
   }

@@ -109,6 +109,7 @@ function displayProducts(body){
         let productCard = 
         `
         <div class="product-card">
+        <div class="slideUp">
         <div class="product-card-body">
         <img class="product-image" src="${element.image_url}">
             <h5 class="card-title">${element.name}</h5>
@@ -116,6 +117,7 @@ function displayProducts(body){
             <p class="card-text">${element.price}</p>
             <p class="card-text">${element.date_available}</p>
             <button class="btn btn-primary" id="rent-button" data-id=${element.id}>Rent It</button>
+        </div>
         </div>
         </div>
         `;
