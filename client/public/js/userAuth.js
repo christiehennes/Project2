@@ -75,7 +75,8 @@ $(document).ready(function() {
             throw new Error('something went wrong')
           }
         }).fail(function(err){
-            alert(err.responseText);
+            alert("Oops! Please enter all required fields");
+            // alert(err.responseText);
         }); 
       }
 
