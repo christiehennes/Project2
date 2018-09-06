@@ -61,17 +61,17 @@ $(document).ready(function() {
     let validInput = true;
 
     //TODO: Rami: perform validation to make sure they are all valid
-    newProd.forEach(item => 
-        {
-            if(item === ''){
-                alert("Oops! Please enter all required fields");
-                validInput = false;
-            }
-            if (!validInput){
-                return;
-            }
-        }
-    )
+    //newProd.forEach(item => 
+    //    {
+    //        if(item === ''){
+    //           alert("Oops! Please enter all required fields");
+    //            validInput = false;
+    //        }
+    //        if (!validInput){
+    //            return;
+    //        }
+    //    }
+    //)
     if(validInput){
         //Perform post to DB (only if a user is logged in)
         $.ajax('/api/addProduct', 
