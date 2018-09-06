@@ -1,6 +1,6 @@
 # Project2
 
-[Rentee](https://christiehennes.github.io./Project1/)
+[Rentee]
 
 This is a application that allows people to post products for others to rent, similiar to a craigslist. Users can create accounts to login and list items and renters can purchase products. 
 
@@ -15,7 +15,7 @@ Select whether to list a product or rent a product. If renting a product, you ca
 ## Authors
 
 * **Christie Hennes** - [Profile](https://github.com/christiehennes)
-* **Kristian Perez-Franco** - [Profile](hhttps://github.com/kbpf4314)
+* **Kristian Perez-Franco** - [Profile](https://github.com/kbpf4314)
 * **Rami Wehbe** - [Profile](https://github.com/ramiwehbe)
 * **Tim Kariev** - [Profile](https://github.com/timkariev)
 
