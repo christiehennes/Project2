@@ -109,8 +109,8 @@ $(document).ready(function() {
             <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <div>Are you sure you want to logout?</div>
-                    <button id="logout-button">Logout</button>
+                    <div id="logout-text">Are you sure you want to logout?</div>
+                    <button id="logout-button">Log Out</button>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
