@@ -20,6 +20,7 @@
     "express-handlebars": "^3.0.0",
     "fs": "0.0.1-security",
     "js-datepicker": "^3.3.2",
+    "mysql": "^2.16.0",
     "mysql2": "^1.6.1",
     "nodemon": "^1.18.4",
     "path": "^0.12.7",
@@ -35,5 +36,14 @@
     "eslint-plugin-prettier": "^2.6.2",
     "mocha": "^5.2.0",
     "prettier": "^1.13.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christiehennes/Project2.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/christiehennes/Project2/issues"
+  },
+  "homepage": "https://github.com/christiehennes/Project2#readme"
 }

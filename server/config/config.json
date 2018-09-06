@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Ccmi!1974",
+    "password": "password",
     "database": "rentee_db",
     "host": "localhost",
     "dialect": "mysql"
