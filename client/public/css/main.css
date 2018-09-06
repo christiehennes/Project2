@@ -204,15 +204,15 @@ h1 {
 
 .list-container{
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-card{
   width: 30%;
   border: 1px solid gray;
   max-height: fit-content;
-
+  margin: 10px;
 }
 
 .product-card-body{
