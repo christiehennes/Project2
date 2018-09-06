@@ -32,6 +32,7 @@ router.post('/register', async (req, res) => {
 
   } catch(err) {
     console.log("here");
+    // alert("Oops, please enter all required fields");
     return res.status(400).send(err);
   }
 

@@ -275,14 +275,18 @@ h1 {
 
 .list-container {
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-card {
   width: 30%;
   border: 1px solid gray;
   max-height: fit-content;
+<<<<<<< HEAD
+=======
+  margin: 10px;
+>>>>>>> 2303cc829f7759dcc39f501fba1dd7a4a758b01f
 }
 
 .product-card-body {
