@@ -44,27 +44,69 @@
             <h1>CREATE AN ACCOUNT</h1>
             <div class="form-group">
                 <label for="exampleFormControlInput1">First Name</label>
-                <input type="input" class="form-control" id="owner-first-name" name="owner-first-name" placeholder="">
+                <input
+                    type="input"
+                    class="form-control"
+                    id="owner-first-name"
+                    name="owner-first-name"
+                    placeholder="First Name"
+                    data-validation="required" 
+                    data-validation-length="max100">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Last Name</label>
-                <input type="input" class="form-control" id="owner-last-name" name="owner-last-name" placeholder="">
+                <input
+                    type="input"
+                    class="form-control"
+                    id="owner-last-name"
+                    name="owner-last-name"
+                    placeholder="Last Name"
+                    data-validation="required" 
+                    data-validation-length="max100">
             </div>
+            
             <div class="form-group">
                 <label for="exampleFormControlInput1">Email</label>
-                <input type="input" class="form-control" id="owner-email" name="owner-email" placeholder="">
+                <input
+                    type="input"
+                    class="form-control"
+                    id="owner-email"
+                    name="owner-email"
+                    placeholder="Email Address"
+                    data-validation="email">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Username</label>
-                <input type="input" class="form-control" id="owner-username" name="owner-username" placeholder="">
+                <input
+                    type="input"
+                    class="form-control"
+                    id="owner-username"
+                    name="owner-username"
+                    placeholder="Username"
+                    data-validation="alphanumeric" data-validation-allowing="-_">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Password</label>
-                <input type="input" class="form-control" id="owner-password" name="owner-password" placeholder="">
+                <input
+                type="password"
+                class="form-control"
+                id="owner-password"
+                name="owner-password"
+                placeholder="Password"
+                data-validation="length"
+                data-validation-length="6-12"
+                data-validation-error-msg="Between 6-12 chars, only alphanumueric characters">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Phone Number</label>
-                <input type="input" class="form-control" id="owner-phone" name="owner-phone" placeholder="">
+                <input
+                    type="input"
+                    class="form-control"
+                    id="owner-phone"
+                    name="owner-phone"
+                    placeholder="10-Digit Phone Number"
+                    data-validation="custom"
+                    data-validation-regexp="^\d{3}[\s\-]?\d{3}[\s\-]?\d{4}$">
             </div>
 
             <div>
@@ -82,6 +124,10 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+    <script>
+        $.validate();
+    </script>
 </body>
 
 </html>
