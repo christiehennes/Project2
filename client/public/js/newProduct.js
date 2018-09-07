@@ -92,7 +92,9 @@ $(document).ready(function() {
         }).then(function(err){
 
             if (err) {
-                alert("Oops! Please enter all required fields");
+               // alert("Oops! Please enter all required fields");
+               console.log("new product added");
+               $('#modal').modal('show');
             }
             else{
                 console.log("new product added");
