@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(customAuthMiddleware);
-app.use(express.static(`${clientDir}/public`));
+app.use(express.static(clientDir + '/public'));
 
 
 app.use(express.static("public"));
