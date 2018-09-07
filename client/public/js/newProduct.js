@@ -117,7 +117,7 @@ $(document).ready(function() {
     $(document).on('click', '#modal-view-all-products', function(e){ 
         e.preventDefault();
         console.log('clicked');
-        window.location = '/listProducts';
+        window.location = '/search/all';
     })
 
 
